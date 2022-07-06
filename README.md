@@ -1,4 +1,6 @@
-# co6f14249b468fa5fdd02f1f5
+# BlackJack Game
+
+A simple blackjack game where you start with two cards, can request cards from the dealer until you're out of the game. 
 
 ## About Scrimba
 
