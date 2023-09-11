@@ -2,6 +2,8 @@
 
 A simple blackjack game where you start with two cards, can request cards from the dealer until you're out of the game. 
 
+Demo: https://whichfahim.github.io/blackjack-game/
+
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
