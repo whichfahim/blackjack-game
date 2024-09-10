@@ -55,6 +55,3 @@ let deck = [
   { points: 10, imgUrl: "images/K_of_spades.png" }, // King
   { points: 11, imgUrl: "images/A_of_spades.png" }, // Ace
 ];
-
-randomCard = deck[Math.floor( Math.random()*51 )];
-console.log(randomCard)
