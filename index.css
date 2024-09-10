@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     transform: scale(1.5);
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 h1 {
@@ -20,6 +20,12 @@ h1 {
 
 #message-el {
     font-style: italic;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 
 button {
