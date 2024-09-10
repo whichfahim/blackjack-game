@@ -17,6 +17,7 @@ let firstCardImg = document.getElementById("first-card-img")
 let secondCardImg = document.getElementById("second-card-img")
 
 let cardContainerDiv = document.getElementById("cards-container-div")
+let cardImgDivEl = document.getElementById("card-img-container")
 
 playerEl.textContent = player.name + ": $" + player.chips
 
@@ -32,29 +33,48 @@ function getRandomCard() {
 }
 
 function startGame() {
+
     isAlive = true
     let firstCard = getRandomCard()
+    if (firstCard === 11){
+        firstCardImg.setAttribute("src",`images/ace_of_spades.png`)
+    }
+    else {
+        firstCardImg.setAttribute("src",`images/${firstCard}_of_spades.png`)
+
+    }
 
     let secondCard = getRandomCard()
+    if (secondCard === 11){
+        secondCardImg.setAttribute("src",`images/ace_of_spades.png`)
+    }
+    else {
+        secondCardImg.setAttribute("src",`images/${secondCard}_of_spades.png`)
+
+    }
 
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
+
     renderGame()
 }
 
 function renderGame() {
+
+
     cardsEl.textContent = "Cards: "
+
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += cards[i] + " "
 
         //for each card create a new img element in the card container div
-        cardImg = document.createElement('img');
-        cardImg.setAttribute("id", `img-${i}`);
-        //map the number in cards to an image
-        // pattern = new RegExp(`images/${cards[i]}_of_.*`)
-        cardImg.setAttribute("src", `images/${cards[i]}_of_hearts.png`)
-        cardImg.setAttribute("class","card-img")
-        cardContainerDiv.appendChild(cardImg)
+        // cardImg = document.createElement('img');
+        // cardImg.setAttribute("id", `img-${i}`);
+        // //map the number in cards to an image
+        // // pattern = new RegExp(`images/${cards[i]}_of_.*`)
+        // cardImg.setAttribute("src", `images/${cards[i]}_of_spades.png`)
+        // cardImg.setAttribute("class","card-img")
+        // cardImgDivEl.appendChild(cardImg)
     }
     
     sumEl.textContent = "Sum: " + sum
@@ -72,8 +92,13 @@ function renderGame() {
 
 
 function newCard() {
+    console.log("getting new card")
     if (isAlive === true && hasBlackJack === false) {
         let card = getRandomCard()
+        cardImg = document.createElement('img');
+        cardImg.setAttribute("class","card-img")
+        cardImg.setAttribute("src", `images/${card}_of_spades.png`)
+        cardContainerDiv.appendChild(cardImg)
         sum += card
         cards.push(card)
         renderGame()        
