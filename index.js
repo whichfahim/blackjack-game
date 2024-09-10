@@ -1,30 +1,64 @@
-availableCards = {
-    1: "A_of_",
-    2: "2_of_",
-    3: "3_of_",
-    4: "4_of_",
-    5: "5_of_",
-    6: "6_of_",
-    7: "7_of_",
-    8: "8_of_",
-    9: "9_of_",
-    10: "10_of_",
-    11: "J_of_",
-    12: "Q_of_",
-    13: "K_of_",
-};
+let deck = [
+  { points: 2, imgUrl: "images/2_of_hearts.png" },
+  { points: 3, imgUrl: "images/3_of_hearts.png" },
+  { points: 4, imgUrl: "images/4_of_hearts.png" },
+  { points: 5, imgUrl: "images/5_of_hearts.png" },
+  { points: 6, imgUrl: "images/6_of_hearts.png" },
+  { points: 7, imgUrl: "images/7_of_hearts.png" },
+  { points: 8, imgUrl: "images/8_of_hearts.png" },
+  { points: 9, imgUrl: "images/9_of_hearts.png" },
+  { points: 10, imgUrl: "images/10_of_hearts.png" },
+  { points: 10, imgUrl: "images/J_of_hearts.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_hearts.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_hearts.png" }, // King
+  { points: 11, imgUrl: "images/A_of_hearts.png" }, // Ace
 
+  { points: 2, imgUrl: "images/2_of_diamonds.png" },
+  { points: 3, imgUrl: "images/3_of_diamonds.png" },
+  { points: 4, imgUrl: "images/4_of_diamonds.png" },
+  { points: 5, imgUrl: "images/5_of_diamonds.png" },
+  { points: 6, imgUrl: "images/6_of_diamonds.png" },
+  { points: 7, imgUrl: "images/7_of_diamonds.png" },
+  { points: 8, imgUrl: "images/8_of_diamonds.png" },
+  { points: 9, imgUrl: "images/9_of_diamonds.png" },
+  { points: 10, imgUrl: "images/10_of_diamonds.png" },
+  { points: 10, imgUrl: "images/J_of_diamonds.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_diamonds.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_diamonds.png" }, // King
+  { points: 11, imgUrl: "images/A_of_diamonds.png" }, // Ace
 
+  { points: 2, imgUrl: "images/2_of_clubs.png" },
+  { points: 3, imgUrl: "images/3_of_clubs.png" },
+  { points: 4, imgUrl: "images/4_of_clubs.png" },
+  { points: 5, imgUrl: "images/5_of_clubs.png" },
+  { points: 6, imgUrl: "images/6_of_clubs.png" },
+  { points: 7, imgUrl: "images/7_of_clubs.png" },
+  { points: 8, imgUrl: "images/8_of_clubs.png" },
+  { points: 9, imgUrl: "images/9_of_clubs.png" },
+  { points: 10, imgUrl: "images/10_of_clubs.png" },
+  { points: 10, imgUrl: "images/J_of_clubs.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_clubs.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_clubs.png" }, // King
+  { points: 11, imgUrl: "images/A_of_clubs.png" }, // Ace
 
-availableSuites = {
-    1: "hearts",
-    2: "diamonds",
-    3: "clubs",
-    4: "spades"
-}
+  { points: 2, imgUrl: "images/2_of_spades.png" },
+  { points: 3, imgUrl: "images/3_of_spades.png" },
+  { points: 4, imgUrl: "images/4_of_spades.png" },
+  { points: 5, imgUrl: "images/5_of_spades.png" },
+  { points: 6, imgUrl: "images/6_of_spades.png" },
+  { points: 7, imgUrl: "images/7_of_spades.png" },
+  { points: 8, imgUrl: "images/8_of_spades.png" },
+  { points: 9, imgUrl: "images/9_of_spades.png" },
+  { points: 10, imgUrl: "images/10_of_spades.png" },
+  { points: 10, imgUrl: "images/J_of_spades.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_spades.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_spades.png" }, // King
+  { points: 11, imgUrl: "images/A_of_spades.png" }, // Ace
+];
+
 
 let player = {
-    name: "Per",
+    name: "Fahim",
     chips: 200
 }
 
@@ -48,53 +82,19 @@ let cardContainerDiv = document.getElementById("cards-container-div")
 playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard() {
-    let randomNumber = Math.floor( Math.random()*13 ) + 1
-
-    let suite = Math.floor( Math.random()*4 ) + 1
-
-
-    let cardDrawn = `${availableCards[randomNumber]}${availableSuites[suite]}`
-
-    // console.log(cardDrawn)
-
-    // if (randomNumber > 10) {
-    //     return 10
-    // } else if (randomNumber === 1) {
-    //     return 11
-    // } else {
-    //     return randomNumber
-    // }
-    return cardDrawn
-
+    randomCard = deck[Math.floor( Math.random()*51 )];
+    return randomCard
 }
 
 function startGame() {
 
     isAlive = true
+
     let firstCard = getRandomCard()
-    let firstPoint = 0
-
-    if (firstCard.slice(0,3)==="king" || firstCard.slice(0,4)==="queen" || firstCard.slice(0,3)==="jack"){
-        firstPoint = 11
-    }   else {
-        firstPoint = Number(firstCard.slice(0,1))
-    }
-
-    console.log(firstCard,firstPoint)
-
     let secondCard = getRandomCard()
-    let secondPoint = 0
-
-    if (secondCard.slice(0,3)==="king" || secondCard.slice(0,4)==="queen" || secondCard.slice(0,3)==="jack"){
-        secondPoint = 10
-    }   else {
-        secondPoint = Number(firstCard.slice(0,1))
-    }
-
-    console.log(secondCard,secondPoint)
 
     cards = [firstCard, secondCard]
-    sum = firstPoint + secondPoint
+    sum = firstCard.points + secondCard.points
 
     renderGame()
 }
@@ -112,7 +112,7 @@ function renderGame() {
         cardImg.setAttribute("id", `img-${i}`);
         //map the number in cards to an image
         // pattern = new RegExp(`images/${cards[i]}_of_.*`)
-        cardImg.setAttribute("src", `images/${cards[i]}.png`)
+        cardImg.setAttribute("src", `${cards[i].imgUrl}`)
         cardImg.setAttribute("class","card-img")
         cardContainerDiv.appendChild(cardImg)
     }
@@ -135,21 +135,8 @@ function newCard() {
     // console.log("getting new card")
     if (isAlive === true && hasBlackJack === false) {
         let card = getRandomCard()
-        console.log(card)
-        // cardImg = document.createElement('img');
-        // cardImg.setAttribute("class","card-img")
-        // cardImg.setAttribute("src", `images/${card}_of_spades.png`)
-        // cardContainerDiv.appendChild(cardImg)
-        let points = 0
-        if (card.slice(0,3)==="king" || card.slice(0,4)==="queen" || card.slice(0,2)==="ace"){
-            points = 11
-        }   else {
-            points = Number(card.slice(0,1))
-        }
 
-        console.log(points)
-
-        sum += points
+        sum += card.points
         cards.push(card)
         renderGame()        
     }

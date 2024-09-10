@@ -1,54 +1,60 @@
 let deck = [
-  { card: '2_of_hearts', points: 2 },
-  { card: '3_of_hearts', points: 3 },
-  { card: '4_of_hearts', points: 4 },
-  { card: '5_of_hearts', points: 5 },
-  { card: '6_of_hearts', points: 6 },
-  { card: '7_of_hearts', points: 7 },
-  { card: '8_of_hearts', points: 8 },
-  { card: '9_of_hearts', points: 9 },
-  { card: '10_of_hearts', points: 10 },
-  { card: 'J_of_hearts', points: 10 },
-  { card: 'Q_of_hearts', points: 10 },
-  { card: 'K_of_hearts', points: 10 },
-  { card: 'A_of_hearts', points: 11 },
-  { card: '2_of_diamonds', points: 2 },
-  { card: '3_of_diamonds', points: 3 },
-  { card: '4_of_diamonds', points: 4 },
-  { card: '5_of_diamonds', points: 5 },
-  { card: '6_of_diamonds', points: 6 },
-  { card: '7_of_diamonds', points: 7 },
-  { card: '8_of_diamonds', points: 8 },
-  { card: '9_of_diamonds', points: 9 },
-  { card: '10_of_diamonds', points: 10 },
-  { card: 'J_of_diamonds', points: 10 },
-  { card:'Q_of_diamonds', points: 10 },
-  { card: 'K_of_diamonds', points: 10 },
-  { card: 'A_of_diamonds', points: 11 },
-  { card: '2_of_clubs', points: 2 },
-  { card: '3_of_clubs', points: 3 },
-  { card: '4_of_clubs', points: 4 },
-  { card: '5_of_clubs', points: 5 },
-  { card: '6_of_clubs', points: 6 },
-  { card: '7_of_clubs', points: 7 },
-  { card: '8_of_clubs', points: 8 },
-  { card: '9_of_clubs', points: 9 },
-  { card: '10_of_clubs', points: 10 },
-  { card: 'J_of_clubs', points: 10 },
-  { card: 'Q_of_clubs', points: 10 },
-  { card: 'K_of_clubs', points: 10 },
-  { card: 'A_of_clubs', points: 11 },
-  { card: '2_of_spades', points: 2 },
-  { card: '3_of_spades', points: 3 },
-  { card: '4_of_spades', points: 4 },
-  { card: '5_of_spades', points: 5 },
-  { card: '6_of_spades', points: 6 },
-  { card: '7_of_spades', points: 7 },
-  { card: '8_of_spades', points: 8 },
-  { card: '9_of_spades', points: 9 },
-  { card: '10_of_spades', points: 10 },
-  { card: 'J_of_spades', points: 10 },
-  { card: 'Q_of_spades', points: 10 },
-  { card: 'K_of_spades', points: 10 },
-  { card: 'A_of_spades', points: 11 }
-]
+  { points: 2, imgUrl: "images/2_of_hearts.png" },
+  { points: 3, imgUrl: "images/3_of_hearts.png" },
+  { points: 4, imgUrl: "images/4_of_hearts.png" },
+  { points: 5, imgUrl: "images/5_of_hearts.png" },
+  { points: 6, imgUrl: "images/6_of_hearts.png" },
+  { points: 7, imgUrl: "images/7_of_hearts.png" },
+  { points: 8, imgUrl: "images/8_of_hearts.png" },
+  { points: 9, imgUrl: "images/9_of_hearts.png" },
+  { points: 10, imgUrl: "images/10_of_hearts.png" },
+  { points: 10, imgUrl: "images/J_of_hearts.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_hearts.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_hearts.png" }, // King
+  { points: 11, imgUrl: "images/A_of_hearts.png" }, // Ace
+
+  { points: 2, imgUrl: "images/2_of_diamonds.png" },
+  { points: 3, imgUrl: "images/3_of_diamonds.png" },
+  { points: 4, imgUrl: "images/4_of_diamonds.png" },
+  { points: 5, imgUrl: "images/5_of_diamonds.png" },
+  { points: 6, imgUrl: "images/6_of_diamonds.png" },
+  { points: 7, imgUrl: "images/7_of_diamonds.png" },
+  { points: 8, imgUrl: "images/8_of_diamonds.png" },
+  { points: 9, imgUrl: "images/9_of_diamonds.png" },
+  { points: 10, imgUrl: "images/10_of_diamonds.png" },
+  { points: 10, imgUrl: "images/J_of_diamonds.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_diamonds.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_diamonds.png" }, // King
+  { points: 11, imgUrl: "images/A_of_diamonds.png" }, // Ace
+
+  { points: 2, imgUrl: "images/2_of_clubs.png" },
+  { points: 3, imgUrl: "images/3_of_clubs.png" },
+  { points: 4, imgUrl: "images/4_of_clubs.png" },
+  { points: 5, imgUrl: "images/5_of_clubs.png" },
+  { points: 6, imgUrl: "images/6_of_clubs.png" },
+  { points: 7, imgUrl: "images/7_of_clubs.png" },
+  { points: 8, imgUrl: "images/8_of_clubs.png" },
+  { points: 9, imgUrl: "images/9_of_clubs.png" },
+  { points: 10, imgUrl: "images/10_of_clubs.png" },
+  { points: 10, imgUrl: "images/J_of_clubs.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_clubs.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_clubs.png" }, // King
+  { points: 11, imgUrl: "images/A_of_clubs.png" }, // Ace
+
+  { points: 2, imgUrl: "images/2_of_spades.png" },
+  { points: 3, imgUrl: "images/3_of_spades.png" },
+  { points: 4, imgUrl: "images/4_of_spades.png" },
+  { points: 5, imgUrl: "images/5_of_spades.png" },
+  { points: 6, imgUrl: "images/6_of_spades.png" },
+  { points: 7, imgUrl: "images/7_of_spades.png" },
+  { points: 8, imgUrl: "images/8_of_spades.png" },
+  { points: 9, imgUrl: "images/9_of_spades.png" },
+  { points: 10, imgUrl: "images/10_of_spades.png" },
+  { points: 10, imgUrl: "images/J_of_spades.png" }, // Jack
+  { points: 10, imgUrl: "images/Q_of_spades.png" }, // Queen
+  { points: 10, imgUrl: "images/K_of_spades.png" }, // King
+  { points: 11, imgUrl: "images/A_of_spades.png" }, // Ace
+];
+
+randomCard = deck[Math.floor( Math.random()*51 )];
+console.log(randomCard)
