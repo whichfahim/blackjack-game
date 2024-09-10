@@ -5,6 +5,13 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.5);
+    margin-top: 25%;
 }
 
 h1 {
