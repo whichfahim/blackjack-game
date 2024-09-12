@@ -1,17 +1,42 @@
-# BlackJack Game
+# Blackjack Deck Simulation
 
-A simple blackjack game where you start with two cards, can request cards from the dealer until you're out of the game. 
+A dynamic Blackjack deck simulation built using **HTML**, **CSS**, and **JavaScript**. This project allows users to randomly draw cards from a deck and calculates the corresponding points based on Blackjack rules.
 
-Demo: https://whichfahim.github.io/blackjack-game/
+### **Live Demo**
+[Check out the live demo here!](https://whichfahim.github.io/blackjack-game/)
 
-## About Scrimba
+---
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Features
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- Full deck of 52 playing cards, each represented as objects with point values and image URLs.
+- Random card drawing functionality with dynamic point calculation.
+- Special handling for Aces, which can count as either 1 or 11 points depending on the game situation.
+- Visual representation of each card drawn from the deck using images.
+- Simple yet effective game interface styled with CSS.
 
-Happy Coding!
+## Technologies Used
+
+- **HTML5**: For structuring the game layout.
+- **CSS3**: For styling the game interface and card display.
+- **JavaScript**: 
+  - Arrays and objects to represent the deck and cards.
+  - Functions to handle card drawing, point calculation, and Blackjack logic.
+  - Dynamic DOM manipulation to update the interface with drawn cards and total points.
+
+## How It Works
+
+1. **Deck Representation**: 
+   - The deck consists of an array of 52 card objects. Each card has a point value based on Blackjack rules and an associated image URL.
+   
+2. **Random Card Draw**: 
+   - Cards are drawn randomly from the deck using a custom JavaScript function that updates the game interface with the drawn card's image.
+   
+3. **Point Calculation**: 
+   - The drawn card's value is added to a running total, and Aces are handled dynamically (either 1 or 11 points) based on the current total.
+  
+## Future Enhancements
+- Add full Blackjack gameplay mechanics, including player and dealer hands.
+- Implement card shuffling and removal of drawn cards from the deck.
+- Allow players to play using in-game credits.
+
